@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 class="display-4">List of Restaurants</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.</p>
+    </div>
+    
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" id="search" placeholder="Search Restaurants"
+        data-ng-model="search">
+</div>
+
+<div class="media" ng-repeat="item in data|filter:search" style="margin: 10px;" data-ng-click="editItem($index)">
+    <img ng-src="{{item.image}}" src="..." alt="..." class="img-thumbnail" height="200" width="200">
+    <div class="media-body">
+        <h5 class="mt-0">{{item.name}}</h5>
+        {{item.detail}}
+        <div>
+            {{item.rating}}
+        </div>
+    </div>
+</div>
