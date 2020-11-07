@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://use.fontawesome.com/5ba7b1fac5.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"
+        integrity="sha512-5zOAub3cIpqklnKmM05spv4xttemFDlbBrmRexWiP0aWV8dlayEGciapAjBQWA7lgQsxPY6ay0oIUVtY/pivXA=="
+        crossorigin="anonymous"></script>
 </head>
 <body ng-controller>
     <header>
-        <h1 class="brandName">Bleh...</h1>
-        <nav>
-            <ul class="navLinks navcenter">
-                <li><a href="">Nav 1</a></li>
-                <li><a href="">Nav 2</a></li>
-                <li><a href="">Nav 3</a></li>
-            </ul>
-        </nav>
+        <h1 class="brandName">Website Name</h1>
+        <ul class="nav justify-content-center navcenter">
+            <li class="nav-item">
+              <a class="nav-link" href="#cuisinesSup">Restaurants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#topPicks">Top picks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact</a>
+            </li>
+          </ul>
+        
         <nav>
             <ul class="navLinks navRight">
-                <li><a href=""><button class="btn btn-outline-dark btn-lg">Log In</button></a></li>
-                <li><a href=""><button class="btn btn-dark btn-lg">Sign Up</button></a></li>
+                <li><a href="signUp.html"><button class="btn btn-outline-dark btn-lg">Log In</button></a></li>
+                <li><a href="signUp.html"><button class="btn btn-dark btn-lg">Sign Up</button></a></li>
             </ul>
         </nav>
     </header>
@@ -52,12 +61,12 @@
         <div id="choice">
             <h2 id="locationRest" class="subHeading">Restaurants near your location</h2>
             <div class="restaurantsByLocation">
-            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/food2.jpeg" alt="chinese"></a><h3>Restaurant 0</h3></div>
-            <div><img class="cuisineImage" src="foods/food1.jpg" alt="Indian"><h3>Restaurant 1</h3></div>
-            <div><img class="cuisineImage" src="foods/food3.jpg" alt="Mid east"><h3>Restaurant 2</h3></div>
-            <div><img class="cuisineImage" src="foods/food4.jpg" alt="Italian"><h3>Restaurant 3</h3></div>
-            <div><img class="cuisineImage" src="foods/mexican.jpg" alt="mexican"><h3>Restaurant 4</h3></div>
-            <div><img class="cuisineImage" src="foods/turkish.jpeg" alt="turkish"><h3>Restaurant 5</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/food2.jpeg" alt="chinese"></a><h3>Restaurant 0</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/food1.jpg" alt="Indian"></a><h3>Restaurant 1</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/food3.jpg" alt="Mid east"></a><h3>Restaurant 2</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/food4.jpg" alt="Italian"></a><h3>Restaurant 3</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/mexican.jpg" alt="mexican"></a><h3>Restaurant 4</h3></div>
+            <div><a href="view-detail.html"><img class="cuisineImage" src="foods/turkish.jpeg" alt="turkish"></a><h3>Restaurant 5</h3></div>
             </div>
         </div>
     </section>
@@ -66,11 +75,11 @@
         <h2 class="subHeading" style="color: #ffffff;">Browse by cuisines</h2>
         <div style="color: #ffffff;" class="cuisines">
             <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/food2.jpeg" alt="chinese"></a><h3>Chinese</h3></div>
-            <div><img class="cuisineImage" src="foods/food1.jpg" alt="Indian"><h3>Indian</h3></div>
-            <div><img class="cuisineImage" src="foods/food3.jpg" alt="Mid east"><h3>MiddleEast</h3></div>
-            <div><img class="cuisineImage" src="foods/food4.jpg" alt="Italian"><h3>Italian</h3></div>
-            <div><img class="cuisineImage" src="foods/mexican.jpg" alt="mexican"><h3>Mexican</h3></div>
-            <div><img class="cuisineImage" src="foods/turkish.jpeg" alt="turkish"><h3>Turkish</h3></div>
+            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/food1.jpg" alt="Indian"></a><h3>Indian</h3></div>
+            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/food3.jpg" alt="Mid east"></a><h3>MiddleEast</h3></div>
+            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/food4.jpg" alt="Italian"></a><h3>Italian</h3></div>
+            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/mexican.jpg" alt="mexican"></a><h3>Mexican</h3></div>
+            <div><a href="restaurantlist.html"><img class="cuisineImage" src="foods/turkish.jpeg" alt="turkish"></a><h3>Turkish</h3></div>
         </div>
     </section>
     <section id="selection">
@@ -84,20 +93,10 @@
             <div><img class="cuisineImage" src="karaoke.jpg" alt="karaoke"><h3>Karaoke</h3></div>
         </div>
     </section>
+    
 
-    <!-- <div id="midSection">
-        <h2 class="subHeading">Top restaurants around you.</h2>
-    <div class="container">
-        <div>
-            <img class="introImage" src="image.webp" alt="">
-        </div>
-        <div>
-            <img class="introImage" src="image2.webp" alt="">
-        </div>
-        <div><img class="introImage" src="image3.jpg" alt=""></div>
-    </div>
-    </div> -->
-    <div class="album py-5 bg-light">
+   
+    <div id="topPicks" class="album py-5 bg-light">
         <h3 class="subHeadingCenter">Top Picks</h3>
         <div class="container">
     
@@ -156,6 +155,8 @@
           </div>
         </div>
       </div>
+
+
       <div id="footer">
         <div class="footerClass">
             <nav class="footerNavHead">
@@ -178,26 +179,6 @@
                     </div>
                 </div>
             </nav>
-            <!-- <nav class="footerNavHead">
-                <h4>nav1</h4>
-                <div class="list">
-                    <div class="item">
-                        <a href="">item 1</a>
-                    </div>
-                    <div class="item">
-                        <a href="">item 2</a>
-                    </div>
-                    <div class="item">
-                        <a href="">item 3</a>
-                    </div>
-                    <div class="item">
-                        <a href="">item 4</a>
-                    </div>
-                    <div class="item">
-                        <a href="">item 5</a>
-                    </div>
-                </div>
-            </nav> -->
             <nav class="footerNavHead">
                 <h4>Help</h4>
                 <div class="list">
@@ -234,15 +215,7 @@
             </nav>
         </div>
       </div>
-      <div>
-            <ul>
-                <li><i class="fab fa-instagram fa-7x"></i></li>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-500px"></i></a>
-                <li><a href=""><i class="fab fa-500px"></i></a></li>
-            </ul>
-      </div>
-      <i class="fab fa-instagram"></i>
+
       
     <script src="jquery-3.5.1.min.js"></script>
     <script src="script.js"></script>
