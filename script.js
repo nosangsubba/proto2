@@ -12,6 +12,7 @@ var app = angular
     $scope.editItem = function (index) {
       $location.path("List/show")
       }
+
     $scope.data = [
       {rating:"4",image:"foods/food1.jpg",name:"Ithaa",detail:"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."},
       {rating:"5",image:"foods/food2.jpeg",name:"Dinner in the Sky",detail:"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."},
@@ -23,7 +24,22 @@ var app = angular
     }])
   .controller("showController",["$scope", "$location", "$routeParams",
   function ($scope, $location, $routeParams) {
-
+    $scope.review = function () {
+      $location.path("/List/review")
+      // alert("hello");
+      }
+  }])
+  .controller("reviewController",["$scope", "$location", "$routeParams",
+  function ($scope, $location, $routeParams) {
+    $scope.reviews = [
+      {name:"Nosang",comment:"The ambience is pretty nice",rating:"5"}
+    ]
+    $scope.submitReview = function () {
+      // alert("hello");
+      $scope.reviews.push(
+        {name:$scope.name, comment:$scope.comment, rating:$scope.rating}
+      )
+      }
   }]);
 app.config(function ($routeProvider) {
     $routeProvider.when("/List",{
